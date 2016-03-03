@@ -52,9 +52,14 @@ public class HelloWorldServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String v = request.getParameter("param2");
+		String v = request.getParameter("id");
 		System.out.println(v);
 		
+		//Alternatively
+/*		DataInputStream reader = new DataInputStream(request.getInputStream());
+		byte[] bytes = new byte[request.getContentLength()];
+		reader.read(bytes);
+		System.out.println(new String(bytes));*/
 		
 	}
 
