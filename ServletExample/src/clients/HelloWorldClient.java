@@ -13,7 +13,7 @@ public class HelloWorldClient {
 	public static void main(String args[]) {
 
 		//Read from Servlet
-		try {
+/*		try {
 			System.out.println("Making GET call");
 			String request        = "http://localhost:8080/ServletExample/Hello";
 			URL    url            = new URL( request );
@@ -30,7 +30,7 @@ public class HelloWorldClient {
 			}
 		} catch (IOException e) {
 			throw new RuntimeException("Please try again. \n" + e);
-		}
+		}*/
 		
 		
 		try {
@@ -46,7 +46,7 @@ public class HelloWorldClient {
 			conn.setDoOutput( true );
 			conn.setInstanceFollowRedirects( false );
 			conn.setRequestMethod( "POST" );
-			conn.setRequestProperty( "Content-Type", "text/html"); 
+			conn.setRequestProperty( "Content-Type", "application/x-www-form-urlencoded"); 
 			conn.setRequestProperty( "charset", "utf-8");
 			conn.setRequestProperty( "Content-Length", Integer.toString( postDataLength ));
 			conn.setUseCaches( false );

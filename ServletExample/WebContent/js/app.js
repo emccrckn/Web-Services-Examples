@@ -1,5 +1,15 @@
-$("button").click(function(){
-    $.ajax({url: "demo_test.txt", success: function(result){
-        $("#div1").html(result);
-    }});
+$("#helloButton").click(function(){
+	var name = $("#nameField").val();
+	$.ajax({
+		url:"/ServletExample/FormServlet",
+		method:"POST",
+		success: function(data,status,xhr){
+			$("#helloHeader").html(data);
+		},
+		error: function(data,status,xhr){
+			$("#helloHeader").html("Error");
+		},
+		data: name
+	});
+	
 });

@@ -1,0 +1,1 @@
+{"java":{"version":"1.8.0_71","class":"java.beans.XMLDecoder","object":{"void":[{"boolean":true,"property":"exact"},{"string":"Test","property":"field"},{"property":"number","int":56},{"property":"preciseNumber","float":134.234}],"class":"ExampleModelClass"}}}
