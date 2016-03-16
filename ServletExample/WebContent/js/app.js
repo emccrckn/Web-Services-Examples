@@ -3,6 +3,7 @@ $("#helloButton").click(function(){
 	$.ajax({
 		url:"/ServletExample/FormServlet",
 		method:"POST",
+		dataType: "json",
 		success: function(data,status,xhr){
 			$("#helloHeader").html(data);
 		},
