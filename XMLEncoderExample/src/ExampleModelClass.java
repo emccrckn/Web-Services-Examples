@@ -99,7 +99,6 @@ public class ExampleModelClass implements Serializable{
 			
 			xml = out.toString();
 			JSONObject jobt = XML.toJSONObject(xml);
-			
 			BufferedOutputStream bout = new BufferedOutputStream(
 		            new FileOutputStream("Test.json"));
 			PrintWriter writer = new PrintWriter(bout);

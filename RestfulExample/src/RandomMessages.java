@@ -7,6 +7,9 @@ import javax.ws.rs.core.MediaType;
 import javax.xml.bind.JAXBElement;
 import javax.xml.namespace.QName;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 @Path("/")
 public class RandomMessages {
 
@@ -21,10 +24,25 @@ public class RandomMessages {
 	
 	@GET
 	@Produces({MediaType.APPLICATION_XML})
+	@Path("/xml")
 	public JAXBElement<RandomMessage> getXml() {
 		return toXml(createRandomMessage());
 	}
 	
+	@GET
+	@Produces({MediaType.APPLICATION_JSON})
+	@Path("/json")
+	public String getJson(){
+		RandomMessage response = createRandomMessage();
+		String json = "{'Error':'Error'}";
+		try {
+			json = new ObjectMapper().writeValueAsString(response);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return json;
+	}
 	private RandomMessage createRandomMessage(){
 		RandomMessage message = new RandomMessage();
 		message.setWords(words[new Random().nextInt(words.length)]);
