@@ -1,6 +1,7 @@
 import javax.xml.bind.annotation.*;
 
 @XmlRootElement(name = "randomMessage")
+@XmlType(propOrder ={"words","wordCount"})
 public class RandomMessage {
 	private String words;
 	private int wordCount;

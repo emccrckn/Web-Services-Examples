@@ -2,3 +2,4 @@
 .recommenders/
 Servers/
 ServletExample2/
+*.class
