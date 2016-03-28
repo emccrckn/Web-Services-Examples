@@ -14,7 +14,7 @@ public class RandomMessage {
 
 	public void setWords(String words) {
 		this.words = words;
-		this.wordCount = words.trim().split("//s+").length;
+		this.wordCount = words.trim().split("\\s+").length;
 	}
 
 	public int getWordCount() {
