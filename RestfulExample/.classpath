@@ -38,5 +38,6 @@
 	<classpathentry kind="lib" path="libs/osgi-resource-locator-1.0.1.jar"/>
 	<classpathentry kind="lib" path="libs/persistence-api-1.0.jar"/>
 	<classpathentry kind="lib" path="libs/validation-api-1.1.0.Final.jar"/>
+	<classpathentry kind="lib" path="libs/jersey-json-1.19.1.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

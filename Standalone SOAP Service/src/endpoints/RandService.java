@@ -5,8 +5,8 @@ import java.util.Random;
 import javax.jws.WebMethod;
 import javax.jws.WebService;
 
-@WebService
-public class RandService {
+@WebService(endpointInterface = "endpoints.RandServiceInterface")
+public class RandService implements RandServiceInterface{
 
 	private static final int maxRands = 16;
 

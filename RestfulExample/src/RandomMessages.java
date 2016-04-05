@@ -3,7 +3,9 @@ import java.util.List;
 import java.util.Random;
 
 import javax.ws.rs.Consumes;
+import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -42,6 +44,42 @@ public class RandomMessages {
 		//return toXml(createRandomMessage());
 	}
 	
+	@POST
+	@Consumes({MediaType.TEXT_PLAIN})
+	@Produces({MediaType.APPLICATION_JSON})
+	@Path("/create")
+	public Response createRandomMessagePlain(String message){
+		System.out.println(message);
+		//TODO Add the new random message to list
+		ServerResponse response = new ServerResponse();
+		response.code = "error";
+		response.message ="User Not Allowed";
+		String json = "";
+		try {
+			json = new ObjectMapper().writeValueAsString(response);
+		} catch (Exception e) {
+			return Response.status(500).build();
+		}
+		return Response.ok(json,"application/json").build();
+	}
+	
+	@POST
+	@Consumes({MediaType.APPLICATION_FORM_URLENCODED})
+	@Produces({MediaType.APPLICATION_JSON})
+	@Path("/create")
+	public Response createRandomMessageForm(@FormParam("text") String message){
+		System.out.println(message);
+		//TODO Add the new random message to list
+		ServerResponse response = new ServerResponse();
+		response.code = "success";
+		String json = "";
+		try {
+			json = new ObjectMapper().writeValueAsString(response);
+		} catch (Exception e) {
+			return Response.status(500).build();
+		}
+		return Response.ok(json,"application/json").build();
+	}
 	@GET
 	@Produces({MediaType.APPLICATION_XML})
 	@Path("/xml/{id: [0-9]+}")
