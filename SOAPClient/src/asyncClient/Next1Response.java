@@ -1,22 +1,23 @@
 
-package client;
+package asyncClient;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for nextN complex type.
+ * <p>Java class for next1Response complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="nextN">
+ * &lt;complexType name="next1Response">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="arg0" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         &lt;element name="return" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -26,27 +27,28 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "nextN", propOrder = {
-    "arg0"
+@XmlType(name = "next1Response", propOrder = {
+    "_return"
 })
-public class NextN {
+public class Next1Response {
 
-    protected int arg0;
+    @XmlElement(name = "return")
+    protected int _return;
 
     /**
-     * Gets the value of the arg0 property.
+     * Gets the value of the return property.
      * 
      */
-    public int getArg0() {
-        return arg0;
+    public int getReturn() {
+        return _return;
     }
 
     /**
-     * Sets the value of the arg0 property.
+     * Sets the value of the return property.
      * 
      */
-    public void setArg0(int value) {
-        this.arg0 = value;
+    public void setReturn(int value) {
+        this._return = value;
     }
 
 }

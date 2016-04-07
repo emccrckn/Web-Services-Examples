@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jaxws:bindings
+	wsdlLocation="http://localhost:8889/rs?wsdl"
+	xmlns:jaxws="http://java.sun.com/xml/ns/jaxws">
+	<jaxws:enableAsyncMapping>true</jaxws:enableAsyncMapping>
+</jaxws:bindings>
